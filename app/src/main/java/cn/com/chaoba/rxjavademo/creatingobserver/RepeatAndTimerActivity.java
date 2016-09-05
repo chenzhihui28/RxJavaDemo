@@ -21,10 +21,12 @@ public class RepeatAndTimerActivity extends BaseActivity {
     }
 
     private Observable<Integer> repeatObserver() {
+        //repeat
         return Observable.just(1).repeat(5);
     }
 
     private Observable<Long> timerObserver() {
+        //一秒钟后发出Observable
         //timer by default operates on the computation Scheduler
         return Observable.timer(1, TimeUnit.SECONDS).observeOn(AndroidSchedulers.mainThread());
     }

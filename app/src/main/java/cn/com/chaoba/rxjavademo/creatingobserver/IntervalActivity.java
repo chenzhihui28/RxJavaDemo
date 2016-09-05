@@ -40,6 +40,8 @@ public class IntervalActivity extends BaseActivity {
     }
 
     private Observable<Long> interval() {
+        //Interval所创建的Observable对象会从0开始，每隔固定的时间发射一个数字。
+        // 需要注意的是这个对象是运行在computation Scheduler,所以如果需要在view中显示结果，要在主线程中订阅。
         return Observable.interval(1, TimeUnit.SECONDS)
         //interva operates by default on the computation Scheduler,so observe on main Thread
         .observeOn(AndroidSchedulers.mainThread());

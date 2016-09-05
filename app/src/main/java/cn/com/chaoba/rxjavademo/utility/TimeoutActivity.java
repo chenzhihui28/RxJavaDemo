@@ -8,6 +8,10 @@ import cn.com.chaoba.rxjavademo.BaseActivity;
 import rx.Observable;
 import rx.Subscriber;
 
+/**
+ * Timeout操作符给Observable加上超时时间，每发射一个数据后就重置计时器，当超过预定的时间还没有发射下一个数据，就抛出一个超时的异常。
+ Rxjava将Timeout实现为很多不同功能的操作符，比如说超时后用一个备用的Observable继续发射数据等。
+ */
 public class TimeoutActivity extends BaseActivity {
 
     @Override

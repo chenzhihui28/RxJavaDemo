@@ -59,6 +59,7 @@ public class CreateAndRangeActivity extends BaseActivity {
     }
 
     private Observable<Integer> rangeObserver() {
+        //Range操作符根据出入的初始值n和数目m发射一系列大于等于n的m个值
         return Observable.range(10, 5);
     }
 

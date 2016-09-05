@@ -10,6 +10,8 @@ import rx.Subscriber;
 
 public class SampleActivity extends BaseActivity {
 
+    //ThrottleFirst操作符则会定期发射这个时间段里源Observable发射的第一个数据
+    //Sample操作符会定时地发射源Observable最近发射的数据，其他的都会被过滤掉，等效于ThrottleLast操作符
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

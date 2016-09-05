@@ -8,6 +8,12 @@ import cn.com.chaoba.rxjavademo.BaseActivity;
 import rx.Observable;
 import rx.Subscriber;
 
+/**
+ * Retry操作符在发生错误的时候回重新进行订阅,而且可以重复多次,所以发射的数据可能产生重复,如果
+ * 重复制定次数还有错误的话就会将错误返回给观察者
+ * Rxjava还实现了RetryWhen操作符。当错误发生时，retryWhen会接收onError的throwable作为参数，并根据定义好的函数返回一个Observable，如果这个Observable发射一个数据，就会重新订阅。
+ * 需要注意的是使用retryWhen的时候,因为每次重新订阅都会产生错误，所以作为参数的obserbvable会不断地发射数据，使用zipWith操作符可以限制重新订阅的次数，否则会无限制地重新订阅。
+ */
 public class RetryActivity extends BaseActivity {
 
     @Override

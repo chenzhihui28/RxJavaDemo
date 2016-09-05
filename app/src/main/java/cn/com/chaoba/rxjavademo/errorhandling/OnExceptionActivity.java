@@ -6,6 +6,10 @@ import cn.com.chaoba.rxjavademo.BaseActivity;
 import rx.Observable;
 import rx.Subscriber;
 
+/**
+ * OnExceptionResumeNext-类似于OnErrorResume,不同之处在于其会对onError抛出的数据类型做判断
+ * 如果是Exception,也会使用另外一个Observable代替原来的Observable继续发射数据,否则将会把错误分发给Subscriber处理
+ */
 public class OnExceptionActivity extends BaseActivity {
 
     @Override

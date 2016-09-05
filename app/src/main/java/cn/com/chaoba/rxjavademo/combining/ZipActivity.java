@@ -7,6 +7,11 @@ import rx.Observable;
 import rx.Subscriber;
 import rx.schedulers.Schedulers;
 
+/**
+ * Zip操作符将多个Observable发射的数据按顺序组合起来，每个数据只能组合一次，而且都是有序的
+ * 。最终组合的数据的数量由发射数据最少的Observable来决定。
+ Rxjava实现了zip和zipWith两个操作符。
+ */
 public class ZipActivity extends BaseActivity {
 
     @Override

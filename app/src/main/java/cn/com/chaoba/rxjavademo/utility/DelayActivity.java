@@ -9,6 +9,10 @@ import rx.Observable;
 import rx.Subscriber;
 import rx.schedulers.Schedulers;
 
+/**
+ * 顾名思义，Delay操作符就是让发射数据的时机延后一段时间，这样所有的数据都会依次延后一段时间发射
+ * 。在Rxjava中将其实现为Delay和DelaySubscription。不同之处在于Delay是延时数据的发射，而DelaySubscription是延时注册Subscriber。
+ */
 public class DelayActivity extends BaseActivity {
 
     @Override

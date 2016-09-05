@@ -8,6 +8,14 @@ import rx.Subscriber;
 
 public class OnErrorActivity extends BaseActivity {
 
+    /**
+     * Catch类似于java 中的try/catch，当错误发生的时候，可以拦截对onError的调用，让Observable不会因为错误的产生而终止
+     * 。在Rxjava中，将这个操作符实现为3个操作符，分别是：
+     * 1.OnErrorReturn-当发生错误的时候，让Observable发射一个预先定义好的数据并正常地终止
+     * 2.OnErrorResume-当发生错误的时候，由另外一个Observable来代替当前的Observable并继续发射数据
+     * 3.OnExceptionResumeNext-类似于OnErrorResume,不同之处在于其会对onError抛出的数据类型做判断
+     * ，如果是Exception，也会使用另外一个Observable代替原Observable继续发射数据，否则会将错误分发给Subscriber。
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

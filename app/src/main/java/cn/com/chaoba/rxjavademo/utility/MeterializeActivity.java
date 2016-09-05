@@ -6,6 +6,10 @@ import cn.com.chaoba.rxjavademo.BaseActivity;
 import rx.Notification;
 import rx.Observable;
 
+/**
+ * Meterialize操作符将OnNext/OnError/OnComplete都转化为一个Notification对象并按照原来的顺序发射出来
+ * dematerialize反之
+ */
 public class MeterializeActivity extends BaseActivity {
 
     @Override

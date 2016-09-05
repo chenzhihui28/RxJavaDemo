@@ -12,6 +12,13 @@ import rx.schedulers.Schedulers;
 
 public class CombineLatestActivity extends BaseActivity {
 
+    /**
+     CombineLatest操作符可以将2~9个Observable发射的数据组装起来然后再发射出来。不过还有两个前提：
+     所有的Observable都发射过数据。
+     满足条件1的时候任何一个Observable发射一个数据，就将所有Observable最新发射的数据按照提供的函数组装起来发射出去。
+     Rxjava实现CombineLast操作符可以让我们直接将组装的Observable作为参数传值，也可以将所有的Observable装在一个List里面传进去
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

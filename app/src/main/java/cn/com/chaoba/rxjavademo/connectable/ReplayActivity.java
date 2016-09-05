@@ -11,6 +11,11 @@ import rx.functions.Action1;
 import rx.observables.ConnectableObservable;
 import rx.schedulers.Schedulers;
 
+/**
+ * Replay操作符返回一个Connectable Observable 对象并且可以缓存其发射过的数据，
+ * 这样即使有订阅者在其发射数据之后进行订阅也能收到其之前发射过的数据。不过使用Replay操作符我们最好还是限定其缓存的大小，
+ * 否则缓存的数据太多了可会占用很大的一块内存。对缓存的控制可以从空间和时间两个方面来实现。
+ */
 public class ReplayActivity extends BaseActivity {
     Subscription mSubscription;
     ConnectableObservable<Long> obs;

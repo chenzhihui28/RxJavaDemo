@@ -28,7 +28,7 @@ public class SubscribeOnAndObserverOnActivity extends BaseActivity {
     private Observable<Integer> subscribeOnObserver() {
         return createObserver()
                 .subscribeOn(Schedulers.computation())
-                .observeOn(Schedulers.immediate());
+                .observeOn(Schedulers.immediate());//immediate在当前线程观察
     }
 
     private Observable<Integer> createObserver() {

@@ -16,6 +16,8 @@ public class SkipAndTakeActivity extends BaseActivity {
         mRButton.setOnClickListener(e -> takeObserver().subscribe(i -> log("Take:" + i)));
     }
 
+    //Skip操作符将源Observable发射的数据过滤掉前n项，而Take操作符则只取前n项，理解和使用起来都很容易，但是用处很大
+    // 。另外还有SkipLast和TakeLast操作符，分别是从后面进行过滤操作。
     private Observable<Integer> skipObserver() {
         return Observable.just(0, 1, 2, 3, 4, 5).skip(2);
     }

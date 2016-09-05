@@ -10,6 +10,10 @@ import rx.Subscription;
 import rx.observables.ConnectableObservable;
 import rx.schedulers.Schedulers;
 
+/**
+ * RefCount操作符就是将一个Connectable Observable 对象再重新转化为一个普通的Observable对象
+ * ，这时候如果由订阅者进行订阅将会触发数据的发射。
+ */
 public class RefCountActivity extends BaseActivity {
     Subscription subscription;
 
