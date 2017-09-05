@@ -6,7 +6,8 @@ import cn.com.chaoba.rxjavademo.BaseActivity;
 import rx.Observable;
 
 /**
- * Concat操作符将多个Observable结合成一个Observable并发射数据，并且严格按照先后顺序发射数据，前一个Observable的数据没有发射完，是不能发射后面Observable的数据的。
+ * Concat操作符将多个Observable结合成一个Observable并发射数据，
+ * 并且严格按照先后顺序发射数据，前一个Observable的数据没有发射完，是不能发射后面Observable的数据的。
  有两个操作符跟它类似，但是有区别，分别是
  1.startWith：仅仅是在前面插上一个数据。
  2.merge:其发射的数据是无序的。

@@ -13,7 +13,8 @@ public class JoinActivity extends BaseActivity {
 
 
     /**
-     Join操作符根据时间窗口来组合两个Observable发射的数据，每个Observable都有一个自己的时间窗口，要组合的时候，在这个时间窗口内的数据都有有效的，可以拿来组合。
+     Join操作符根据时间窗口来组合两个Observable发射的数据，每个Observable都有一个自己的时间窗口
+     ，要组合的时候，在这个时间窗口内的数据都有有效的，可以拿来组合。
      Rxjava还实现了groupJoin，基本和join相同，只是最后组合函数的参数不同
      */
 

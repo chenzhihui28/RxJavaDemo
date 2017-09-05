@@ -5,6 +5,7 @@ import android.os.Bundle;
 import cn.com.chaoba.rxjavademo.BaseActivity;
 import rx.Observable;
 import rx.Subscriber;
+import rx.functions.Action1;
 
 public class OnErrorActivity extends BaseActivity {
 
@@ -53,7 +54,54 @@ public class OnErrorActivity extends BaseActivity {
                 log("onErrorResume-onNext:" + s);
             }
         }));
+
+        Observable.just("aaa").doOnNext(new Action1<String>() {
+            @Override
+            public void call(String s) {
+                bbb();
+            }
+        }).subscribe(new Subscriber<String>() {
+            @Override
+            public void onCompleted() {
+                log("onCompleted11111");
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                log("onError1111"+e.toString());
+            }
+
+            @Override
+            public void onNext(String s) {
+                log("onnext1111"+s);
+            }
+        });
+
     }
+
+    private void bbb(){
+        Observable.just("bbb").subscribe(new Subscriber<String>() {
+            @Override
+            public void onCompleted() {
+                log("onCompleted3333");
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                log("onError3333"+e.toString());
+            }
+
+            @Override
+            public void onNext(String s) {
+                log("onnext3333"+s);
+                OnErrorActivity onErrorActivity = null;
+                onErrorActivity.createObserver();
+            }
+        });
+    }
+
+
+
 
     private Observable<String> onErrorReturnObserver() {
         return createObserver().onErrorReturn(throwable -> "onErrorReturn");
